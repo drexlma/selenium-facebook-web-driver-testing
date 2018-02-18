@@ -8,3 +8,6 @@ docker run  -p 4444:4444 --security-opt seccomp:unconfined -d drexlmaier/seleniu
 
 docker exec -it $(docker ps -q --filter ancestor=drexlmaier/selenium-facebook-web-driver-testing ) bash
 
+
+docker exec -it $(docker ps -q --filter ancestor=drexlmaier/selenium-facebook-web-driver-testing ) php /usr/local/bin/example.php
+
