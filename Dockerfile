@@ -7,14 +7,14 @@ USER root
 
 # Install dependencies
 RUN apt-get update \
-&& apt-get install -y unzip wget sudo bzip2 gnupg apt-utils curl apt-transport-https ca-certificates  \
+ && apt-get install -y unzip wget sudo bzip2 gnupg apt-utils curl apt-transport-https ca-certificates  \
  && apt-get install -y  php-cli php-dev php-curl php-xml php-zip php-mbstring \
  && apt-get clean \ 
  && cd /usr/local/bin \
-&& curl -sS https://getcomposer.org/installer | php \
-&& php composer.phar require facebook/webdriver \
-echo 'root:secret' | chpasswd \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ && curl -sS https://getcomposer.org/installer | php \
+ && php composer.phar require facebook/webdriver \
+ && echo 'root:secret' | chpasswd \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 ADD example.php /usr/local/bin
